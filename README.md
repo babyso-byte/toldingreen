@@ -28,7 +28,7 @@ Prices, presets, the term discounts and the language surcharge are set at the to
 
 ## Contact form
 
-For now the form builds a brief that the visitor sends by email to sonya@toldingreen.com. To receive submissions directly, connect a form service such as Formspree and post the form data to it from the submit handler in `site.js`.
+The form sends each lead through Web3Forms to sonya@toldingreen.com. The access key is `W3F_KEY` at the top of `site.js`; it is public by design. If sending fails, the visitor sees the brief with a mailto link instead.
 
 ## Publishing on GitHub Pages
 

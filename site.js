@@ -1,7 +1,7 @@
 {
 const EMAIL = 'sonya@toldingreen.com';
 /* Web3Forms access key: submissions are emailed to sonya@toldingreen.com. The key is public by design. */
-const W3F_KEY = '';
+const W3F_KEY = '213143eb-f5cc-4dee-a44e-b891840388e3';
 const store = {
   get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch(e){ return null; } },
   set(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} },
