@@ -1,5 +1,7 @@
 {
 const EMAIL = 'sonya@toldingreen.com';
+/* Web3Forms access key: submissions are emailed to sonya@toldingreen.com. The key is public by design. */
+const W3F_KEY = '';
 const store = {
   get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch(e){ return null; } },
   set(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} },
@@ -201,8 +203,9 @@ if(form){
     document.getElementById('est-clear').addEventListener('click', ()=>{ store.del('tig-estimate'); estBox.hidden=true; });
   }
   const setErr = (id,msg)=>{ const f=document.getElementById(id); const e=document.getElementById(id+'-err'); if(f) f.setAttribute('aria-invalid', msg?'true':'false'); if(e) e.textContent=msg||''; return !msg; };
-  form.addEventListener('submit', e=>{
+  form.addEventListener('submit', async e=>{
     e.preventDefault();
+    document.getElementById('f-send-err').textContent='';
     const v = id => document.getElementById(id).value.trim();
     const needs = [...form.querySelectorAll('input[name=need]:checked')].map(c=>c.parentElement.textContent.trim());
     let ok = true;
@@ -219,10 +222,38 @@ if(form){
       v('f-budget')?`Monthly budget: ${v('f-budget')}`:'', v('f-msg')?`\n${v('f-msg')}`:'',
       attach?`\n${est.text}`:''
     ].filter(Boolean).join('\n');
-    const done = document.getElementById('done');
-    document.getElementById('done-text').textContent = text;
-    document.getElementById('done-mail').href = `mailto:${EMAIL}?subject=${encodeURIComponent('Brief from '+v('f-company'))}&body=${encodeURIComponent(text)}`;
-    form.hidden = true; done.hidden = false; done.querySelector('h2').focus();
+    const showFallback = ()=>{
+      const done = document.getElementById('done');
+      document.getElementById('done-text').textContent = text;
+      document.getElementById('done-mail').href = `mailto:${EMAIL}?subject=${encodeURIComponent('Brief from '+v('f-company'))}&body=${encodeURIComponent(text)}`;
+      form.hidden = true; done.hidden = false; done.querySelector('h2').focus();
+    };
+    if(!W3F_KEY){ showFallback(); return; }
+    const btn = document.getElementById('f-send'); btn.disabled = true; btn.textContent = 'Sending…';
+    try{
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({
+          access_key: W3F_KEY,
+          subject: `New lead from toldingreen.com: ${v('f-company')}`,
+          from_name: 'Told in green website',
+          replyto: v('f-email'),
+          botcheck: document.getElementById('f-bot').checked,
+          Name: v('f-name'), Email: v('f-email'), Company: v('f-company'),
+          Website: v('f-site'), Role: v('f-role'), Markets: v('f-markets'),
+          'Interested in': needs.join(', '), 'Monthly budget': v('f-budget'),
+          Message: v('f-msg'), Estimate: attach ? est.text : ''
+        })
+      });
+      const data = await res.json().catch(()=>({}));
+      if(!res.ok || data.success === false) throw new Error(data.message || 'send failed');
+      store.del('tig-estimate');
+      const sent = document.getElementById('sent');
+      form.hidden = true; sent.hidden = false; sent.querySelector('h2').focus();
+    } catch(err){
+      btn.disabled = false; btn.textContent = 'Send';
+      showFallback();
+    }
   });
   document.getElementById('done-copy').addEventListener('click', async e=>{
     const t = document.getElementById('done-text').textContent, b=e.currentTarget;

@@ -65,11 +65,18 @@
           <select id="f-budget"><option value="">Not sure yet</option><option>Under $1,500</option><option>$1,500 to $3,000</option><option>$3,000 to $6,000</option><option>Over $6,000</option></select>
         </label>
         <label for="f-msg">What do you sell, and to whom?<textarea id="f-msg" placeholder="For example: we make climate sensors for tomato greenhouses and want distributors in Spain and Mexico."></textarea><span class="err" id="f-msg-err"></span></label>
-        <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center"><button class="btn btn-main" type="submit">Prepare my brief</button><span class="small">We use your details only to reply to you.</span></div>
+        <input type="checkbox" name="botcheck" id="f-bot" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+        <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center"><button class="btn btn-main" type="submit" id="f-send">Send</button><span class="small">We use your details only to reply to you.</span></div>
+        <p class="err" id="f-send-err" role="alert"></p>
       </form>
 
+      <div class="done" id="sent" hidden>
+        <h2 tabindex="-1">Thank you, your brief is with us</h2>
+        <p class="mut">We reply within one working day from <b>sonya@toldingreen.com</b>. If it doesn't arrive, check your spam folder.</p>
+      </div>
+
       <div class="done" id="done" hidden>
-        <h2 tabindex="-1">Your brief is ready to send</h2>
+        <h2 tabindex="-1">Your brief could not be sent automatically</h2>
         <p class="mut">Nothing has been sent yet. Open it in your email app, or copy it and send it to <b>sonya@toldingreen.com</b>.</p>
         <pre id="done-text"></pre>
         <div class="actions"><a class="btn btn-main" id="done-mail" href="mailto:sonya@toldingreen.com">Open in email</a><button type="button" class="btn btn-line" id="done-copy">Copy brief</button><button type="button" class="btn btn-line" id="done-edit">Edit</button></div>
