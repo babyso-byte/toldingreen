@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Told in green</title>
+<meta name="description" content="PR, trade media and lead generation for agri-tech and horticulture companies.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="index.html" aria-label="Told in green, home"><svg class="mark" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="8" fill="#CCF261"/><g fill="#0F2219"><circle cx="7.5" cy="7.5" r="3.3"/><circle cx="15" cy="7.5" r="2.4"/><circle cx="22.5" cy="7.5" r="1.3"/><circle cx="7.5" cy="15" r="2.4"/><circle cx="15" cy="15" r="3.3"/><circle cx="22.5" cy="15" r="2.4"/><circle cx="7.5" cy="22.5" r="1.3"/><circle cx="15" cy="22.5" r="2.4"/><circle cx="22.5" cy="22.5" r="3.3"/></g></svg>Told in <i>green</i></a>
+  <nav class="nav" aria-label="Main"><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="contact.html" aria-current="page">Contact</a><a class="btn btn-line" href="pricing.html">Get an estimate</a></nav>
+</div></header>
+
+<main>
+<section class="wall band short" data-amp=".6" data-seed="8" aria-label="Contact">
+  <canvas aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="crumb" data-clear><a href="index.html">Home</a> / Contact</p>
+    <div class="foot" data-clear>
+      <h1>Tell us about your company</h1>
+      <p>A few lines are enough. We reply within one working day with questions or a time for a 30-minute call.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-label="Brief form">
+  <div class="wrap contact">
+    <div>
+      <form id="brief" novalidate>
+        <div class="est" id="est" hidden>
+          <label style="display:flex;align-items:center;gap:10px;font-weight:600"><input type="checkbox" id="est-use" checked style="width:20px;height:20px;accent-color:#1F4A2E;margin:0">Attach my estimate from the pricing page</label>
+          <pre id="est-text"></pre>
+          <p><button type="button" class="chip" id="est-clear">Remove estimate</button></p>
+        </div>
+        <div class="f2">
+          <label for="f-name">Your name<input type="text" id="f-name" autocomplete="name"><span class="err" id="f-name-err"></span></label>
+          <label for="f-email">Work email<input type="email" id="f-email" autocomplete="email"><span class="err" id="f-email-err"></span></label>
+        </div>
+        <div class="f2">
+          <label for="f-company">Company<input type="text" id="f-company" autocomplete="organization"><span class="err" id="f-company-err"></span></label>
+          <label for="f-site">Website <span class="opt-t">optional</span><input type="url" id="f-site" placeholder="https://" autocomplete="url"></label>
+        </div>
+        <div class="f2">
+          <label for="f-role">Your role <span class="opt-t">optional</span><input type="text" id="f-role" autocomplete="organization-title"></label>
+          <label for="f-markets">Target markets <span class="opt-t">optional</span><input type="text" id="f-markets" placeholder="For example Spain, Mexico, Poland"></label>
+        </div>
+        <fieldset>
+          <legend>What do you need?</legend>
+          <div class="checks">
+            <label><input type="checkbox" name="need" value="pr">Media relations</label>
+            <label><input type="checkbox" name="need" value="art">Articles and longreads</label>
+            <label><input type="checkbox" name="need" value="db">Market contact base</label>
+            <label><input type="checkbox" name="need" value="out">Distributor outreach</label>
+            <label><input type="checkbox" name="need" value="mail">Email and CRM</label>
+            <label><input type="checkbox" name="need" value="li">LinkedIn</label>
+            <label><input type="checkbox" name="need" value="audit">Website audit</label>
+          </div>
+        </fieldset>
+        <label for="f-budget">Monthly budget <span class="opt-t">optional</span>
+          <select id="f-budget"><option value="">Not sure yet</option><option>Under $1,500</option><option>$1,500 to $3,000</option><option>$3,000 to $6,000</option><option>Over $6,000</option></select>
+        </label>
+        <label for="f-msg">What do you sell, and to whom?<textarea id="f-msg" placeholder="For example: we make climate sensors for tomato greenhouses and want distributors in Spain and Mexico."></textarea><span class="err" id="f-msg-err"></span></label>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center"><button class="btn btn-main" type="submit">Prepare my brief</button><span class="small">We use your details only to reply to you.</span></div>
+      </form>
+
+      <div class="done" id="done" hidden>
+        <h2 tabindex="-1">Your brief is ready to send</h2>
+        <p class="mut">Nothing has been sent yet. Open it in your email app, or copy it and send it to <b>sonya@toldingreen.com</b>.</p>
+        <pre id="done-text"></pre>
+        <div class="actions"><a class="btn btn-main" id="done-mail" href="mailto:sonya@toldingreen.com">Open in email</a><button type="button" class="btn btn-line" id="done-copy">Copy brief</button><button type="button" class="btn btn-line" id="done-edit">Edit</button></div>
+      </div>
+    </div>
+
+    <aside class="aside">
+      <div class="policy">
+        <h3>sonya@toldingreen.com</h3>
+        <p>Write directly if a form is not your thing. Calls are in English, scheduled to suit European and American time zones.</p>
+      </div>
+      <div class="est" style="gap:14px">
+        <h3>What happens next</h3>
+        <ul class="next">
+          <li><b>Same day</b><span>We reply with a few questions or a time for a call.</span></li>
+          <li><b>The call</b><span>30 minutes on your product, buyers and markets. We check for competitor conflicts.</span></li>
+          <li><b>Next day</b><span>A fixed quote and a freelance service contract.</span></li>
+          <li><b>Right away</b><span>First lists and pitches, no long planning phase.</span></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+</main>
+
+
+<footer class="band foot-site">
+  <div class="wrap">
+    <div style="display:grid;gap:14px;align-content:start"><a class="logo" href="index.html"><svg class="mark" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="8" fill="#CCF261"/><g fill="#0F2219"><circle cx="7.5" cy="7.5" r="3.3"/><circle cx="15" cy="7.5" r="2.4"/><circle cx="22.5" cy="7.5" r="1.3"/><circle cx="7.5" cy="15" r="2.4"/><circle cx="15" cy="15" r="3.3"/><circle cx="22.5" cy="15" r="2.4"/><circle cx="7.5" cy="22.5" r="1.3"/><circle cx="15" cy="22.5" r="2.4"/><circle cx="22.5" cy="22.5" r="3.3"/></g></svg>Told in <i>green</i></a><p style="max-width:40ch">PR, trade media and lead generation for agri-tech and horticulture companies.</p></div>
+    <div><h4>Pages</h4><ul><li><a href="services.html">Services</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Write to us</h4><ul><li><a href="mailto:sonya@toldingreen.com">sonya@toldingreen.com</a></li><li>Replies within one working day</li><li>Calls in English</li></ul></div>
+    <div class="base"><span>© 2026 Told in green</span><span>Earned media only. All work under a freelance service contract.</span></div>
+  </div>
+</footer>
+<script src="site.js"></script>
+</body>
+</html>
