@@ -93,15 +93,15 @@ document.querySelectorAll('.wall').forEach(wall=>{
 
 /* ---------- pricing calculator ---------- */
 const ITEMS = [
-  {id:'pr',  name:'Media relations & PR', price:1800, unit:'per month', lang:true, col:'#9DBF7E',
+  {id:'pr',  name:'Media relations & PR', price:1800, unit:'per month', lang:true, col:'#CCF261',
    desc:'Press list for your segment, story angles, pitching editors one by one, interview booking.'},
-  {id:'art', name:'Contributed articles & longreads', price:380, unit:'per article', qty:2, min:1, max:8, qlabel:'articles a month', lang:true, col:'#C3D8AE',
+  {id:'art', name:'Contributed articles & longreads', price:380, unit:'per article', qty:2, min:1, max:8, qlabel:'articles a month', lang:true, col:'#5EC8E6',
    desc:'Expert articles written for a named magazine, in your voice and to its guidelines.'},
-  {id:'out', name:'Distributor & buyer outreach', price:1400, unit:'per month', lang:true, col:'#5F8E78',
+  {id:'out', name:'Distributor & buyer outreach', price:1400, unit:'per month', lang:true, col:'#F2B84B',
    desc:'Personal emails to dealers, distributors and large growers, follow-ups, warm handoff to sales.'},
-  {id:'mail',name:'Email campaigns & CRM', price:750, unit:'per month', lang:true, col:'#8FB3B5',
+  {id:'mail',name:'Email campaigns & CRM', price:750, unit:'per month', lang:true, col:'#B79CF5',
    desc:'Lists, segments and contact scoring in your CRM, one campaign a month built from your content.'},
-  {id:'li',  name:'LinkedIn company page', price:650, unit:'per month', lang:true, col:'#DCE3D4',
+  {id:'li',  name:'LinkedIn company page', price:650, unit:'per month', lang:true, col:'#F2867A',
    desc:'Eight posts a month from your cases, articles, trade shows and team.'},
   {id:'db',  name:'Market contact base', price:600, unit:'per market, once', qty:1, min:1, max:12, qlabel:'markets', oneoff:true,
    desc:'Growers or channel partners in one country: found, verified, segmented, competitors removed.'},

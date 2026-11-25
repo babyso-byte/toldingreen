@@ -187,11 +187,11 @@ p{margin:0}
 .result{position:sticky;top:96px;background:var(--forest);color:#DDE6DA;border-radius:28px;padding:clamp(22px,3vw,32px);display:grid;gap:18px}
 .result .big{font-size:clamp(48px,6vw,76px);font-weight:500;letter-spacing:-.04em;line-height:1;color:#fff;white-space:nowrap}
 .result .big small{font-size:.36em;color:#B9C6B5;letter-spacing:0}
-.mix{display:flex;height:14px;border-radius:999px;overflow:hidden;background:#20392B}
-.mix span{height:100%}
+.mix{display:flex;gap:3px;height:16px;border-radius:999px;overflow:hidden}
+.mix span{height:100%;min-width:6px}
 .brk{display:grid;gap:7px;font-size:15px}
 .brk div{display:grid;grid-template-columns:12px minmax(0,1fr) auto;gap:10px;align-items:center}
-.brk i{width:12px;height:12px;border-radius:3px}
+.brk i{width:14px;height:14px;border-radius:4px}
 .brk b{font-weight:500;color:#fff;white-space:nowrap}
 .sum{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;border-top:1px solid #2A4535;padding-top:16px}
 .sum .v{font-size:24px;color:#fff;font-weight:500;white-space:nowrap;letter-spacing:-.02em}
